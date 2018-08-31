@@ -20,7 +20,9 @@ import { AuthGuardService } from './AuthGuard.service';
 import { UserService } from './user.service';
 import { AdminGuardService } from './admin-guard.service';
 import { CategoryService } from './category.service';
-
+import {FormsModule} from '@angular/forms';
+import { ProductService } from './product.service';
+import {CustomFormsModule} from 'ng2-validation';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,9 +34,11 @@ import { CategoryService } from './category.service';
     ],
   imports: [
     BrowserModule,
+    FormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
+    CustomFormsModule,
     RouterModule.forRoot([
       {path: '', component: HomeComponent},
       {path: 'login', component: LoginComponent},
@@ -56,7 +60,8 @@ import { CategoryService } from './category.service';
     UserService,
     UserService,
     AdminGuardService,
-    CategoryService
+    CategoryService,
+    ProductService
   ],
   bootstrap: [AppComponent]
 })
