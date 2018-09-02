@@ -40,7 +40,7 @@ import {CustomFormsModule} from 'ng2-validation';
     AngularFireAuthModule,
     CustomFormsModule,
     RouterModule.forRoot([
-      {path: '', component: HomeComponent},
+      {path: '', component: ProductsComponent},
       {path: 'login', component: LoginComponent},
       {path: 'products', component: ProductsComponent},
       {path: 'shopping-cart', component: ShoppingCartComponent},
