@@ -3,6 +3,7 @@ import { ProductService } from '../../product.service';
 import { CategoryService } from '../../category.service';
 import { ActivatedRoute } from '@angular/router';
 import 'rxjs/add/operator/switchMap';
+import { ShoppingCartService } from '../../shopping-cart.service';
 
 @Component({
   selector: 'app-products',
@@ -15,7 +16,7 @@ export class ProductsComponent implements OnInit {
   categories$;
   category: string;
 
-  constructor(route: ActivatedRoute, productService: ProductService, categoryService: CategoryService) { 
+  constructor(route: ActivatedRoute, productService: ProductService, categoryService: CategoryService, shoppingCartService : ShoppingCartService) { 
 
     productService
     .getAll()

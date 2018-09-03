@@ -11,6 +11,7 @@ export class ProductCardComponent implements OnInit {
 
   @Input('product') product: Product;
   @Input('show-actions') showActions = true;
+  @Input('shopping-cart') shoppingCart;
   constructor(private cartService: ShoppingCartService) { }
 
   addToCart(product : ProductService){
