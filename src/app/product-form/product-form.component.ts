@@ -19,7 +19,7 @@ export class ProductFormComponent implements OnInit {
   }
 
   save(product){
-    this.productService.creatw(product);
+    this.productService.creat(product);
   }
   ngOnInit() {
   }

@@ -25,6 +25,8 @@ import { ProductService } from './product.service';
 import {CustomFormsModule} from 'ng2-validation';
 import { ProductFilter } from './product-filter.component/product-filter.component.component';
 import { CartComponent } from './cart/cart.component';
+import { ProductCardComponent } from './product-card/product-card.component';
+import { ShoppingCartService } from './shopping-cart.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,8 +35,9 @@ import { CartComponent } from './cart/cart.component';
     AdminProductsComponent,
     AdminOrdersComponent,
     ProductsComponent,
-    ProductFilter.ComponentComponent,
-    CartComponent
+    ProductFilter,
+    CartComponent,
+    ProductCardComponent
     ],
   imports: [
     BrowserModule,
@@ -65,7 +68,8 @@ import { CartComponent } from './cart/cart.component';
     UserService,
     AdminGuardService,
     CategoryService,
-    ProductService
+    ProductService,
+    ShoppingCartService
   ],
   bootstrap: [AppComponent]
 })
