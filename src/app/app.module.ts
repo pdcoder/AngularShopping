@@ -27,6 +27,7 @@ import { ProductFilter } from './product-filter.component/product-filter.compone
 import { CartComponent } from './cart/cart.component';
 import { ProductCardComponent } from './product-card/product-card.component';
 import { ShoppingCartService } from './shopping-cart.service';
+import { ShippingFormComponent } from './shipping-form/shipping-form.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +38,8 @@ import { ShoppingCartService } from './shopping-cart.service';
     ProductsComponent,
     ProductFilter,
     CartComponent,
-    ProductCardComponent
+    ProductCardComponent,
+    ShippingFormComponent
     ],
   imports: [
     BrowserModule,
