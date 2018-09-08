@@ -15,23 +15,27 @@ import { OrderSuccessComponent } from './order-success/order-success.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { ProductsComponent } from './products/products.component';
 import { HomeComponent } from './home/home.component';
-import { AuthService } from './auth.service';
+import { AuthService } from './shared/services/auth.service';
 import { AuthGuardService } from './AuthGuard.service';
-import { UserService } from './user.service';
-import { AdminGuardService } from './admin-guard.service';
-import { CategoryService } from './category.service';
+import { UserService } from './shared/services/user.service';
+import { AdminGuardService } from './admin/services/admin-guard.service';
+import { CategoryService } from './shared/services/category.service';
 import {FormsModule} from '@angular/forms';
 import { ProductService } from './product.service';
 import {CustomFormsModule} from 'ng2-validation';
 import { ProductFilter } from './product-filter.component/product-filter.component.component';
 import { CartComponent } from './cart/cart.component';
 import { ProductCardComponent } from './product-card/product-card.component';
-import { ShoppingCartService } from './shopping-cart.service';
-import { OrderService } from './order.service';
+import { ShoppingCartService } from './shared/services/shopping-cart.service';
+import { OrderService } from './shared/services/order.service';
 import { ProductQuantityComponent } from './product-quantity/product-quantity.component';
+import { OrderSuccessComponent } from './shopping/components/order-success/order-success.component';
+import { ShoppingCartSummaryComponent } from './shopping/components/shopping-cart-summary/shopping-cart-summary.component';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    OrderSuccessComponent,
+    ShoppingCartSummaryComponent
     ],
     imports: [
       BrowserModule,
