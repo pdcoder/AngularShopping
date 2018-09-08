@@ -28,50 +28,25 @@ import { CartComponent } from './cart/cart.component';
 import { ProductCardComponent } from './product-card/product-card.component';
 import { ShoppingCartService } from './shopping-cart.service';
 import { OrderService } from './order.service';
+import { ProductQuantityComponent } from './product-quantity/product-quantity.component';
 @NgModule({
   declarations: [
-    AppComponent,
-    NavbarComponent,
-    CheckoutComponent,
-    AdminProductsComponent,
-    AdminOrdersComponent,
-    ProductsComponent,
-    ProductFilter,
-    CartComponent,
-    ProductCardComponent
+    AppComponent
     ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFireDatabaseModule,
-    AngularFireAuthModule,
-    CustomFormsModule,
-    RouterModule.forRoot([
-      {path: '', component: ProductsComponent},
-      {path: 'login', component: LoginComponent},
-      {path: 'products', component: ProductsComponent},
-      {path: 'shopping-cart', component: ShoppingCartComponent},
-      {path: 'check-out', component: CheckoutComponent, canActivate: [AuthGuardService]},
-      {path: 'ordersuccess', component: OrderSuccessComponent, canActivate: [AuthGuardService]},
-
-      {path: 'admin/products', component: AdminProductsComponent, canActivate: [AuthGuardService, AdminGuardService]},
-      {path: 'admin/orders', component: AdminOrdersComponent, canActivate: [AuthGuardService,AdminGuardService]},
-
-      {path: 'admin/products/new', component: AdminProductsComponent, canActivate: [AuthGuardService, AdminGuardService]},
-      {path: 'admin/orders/new', component: AdminOrdersComponent, canActivate: [AuthGuardService,AdminGuardService]}
-    ])
-  ],
+    imports: [
+      BrowserModule,
+      SharedModule,
+      AdminModule,
+      ShoppingModule,
+      CoreModule,
+      AngularFireModule.initializeApp(environment.firebase),
+      RouterModule.forRoot([
+        { path: '', component: ProductsComponent },
+        { path: 'login', component: LoginComponent },
+      ])    
+    ],
   providers: [
-    AuthService,
-    AuthGuardService,
-    UserService,
-    UserService,
-    AdminGuardService,
-    CategoryService,
-    ProductService,
-    OrderService,
-    ShoppingCartService
+    AdminGuardService
   ],
   bootstrap: [AppComponent]
 })
