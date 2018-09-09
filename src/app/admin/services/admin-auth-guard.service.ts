@@ -1,9 +1,9 @@
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { UserService } from '../../shared/services/user.service';
 import { AuthService } from '../../shared/services/auth.service';
 import { CanActivate } from '@angular/router';
 import { Injectable } from '@angular/core';
-import 'rxjs/add/operator/map';
+import { map } from 'rxjs/operators';
 
 @Injectable()
 export class AdminAuthGuard implements CanActivate {
@@ -12,6 +12,6 @@ export class AdminAuthGuard implements CanActivate {
 
   canActivate(): Observable<boolean> { 
     return this.auth.appUser$
-      .map(appUser => appUser.isAdmin);
+      .pipe(map(appUser => appUser.isAdmin));
   }
 }

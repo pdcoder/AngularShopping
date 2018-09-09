@@ -8,7 +8,7 @@ import { AdminProductsComponent } from './components/admin-products/admin-produc
 import { AdminOrdersComponent } from './components/admin-orders/admin-orders.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AuthGuard } from "shared/services/auth-guard.service";
+import { AuthGuard } from "../shared/services/auth-guard.service";
 
 @NgModule({
   imports: [
