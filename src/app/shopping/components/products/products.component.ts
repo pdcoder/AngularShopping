@@ -32,10 +32,10 @@ export class ProductsComponent implements OnInit  {
   private populateProducts() { 
     this.productService
       .getAll()
-      .pipe(switchMap(products => {
+      .switchMap(products => {
         this.products = products;
         return this.route.queryParamMap;
-      }))
+      })
       .subscribe(params => {
         this.category = params.get('category');
         this.applyFilter();      
